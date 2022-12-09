@@ -1,0 +1,16 @@
+genesis-file="execution-genesis.json"
+data-path="/tmp/besu"
+network-id=7882
+rpc-http-enabled=true
+rpc-http-api=["ADMIN","ETH","NET","DEBUG"]
+host-allowlist=["*"]
+rpc-http-cors-origins=["*"]
+rpc-http-port=8545
+p2p-port=30308
+miner-enabled=true
+miner-coinbase="0xfe3b557e8fb62b89f4916b721be55ceb828dbd73"
+p2p-enabled=false
+node-private-key-file="besu.key"
+engine-rpc-enabled=true
+engine-jwt-secret="jwtsecret.txt"
+engine-jwt-disabled=false
