@@ -4,6 +4,10 @@ Based on https://github.com/rolfyone/playground/tree/main/capella/beku (which is
 
 ## Setup
 
+Using besu branch from https://github.com/hyperledger/besu/pull/4758
+
+Build besu and teku (master branch) respectively with `./gradlew installDist`
+
 Set 2 environment variables, to find besu and teku binaries. These are the locations of the applications that will be run in the start scripts.
 
 ```
@@ -16,7 +20,7 @@ export TEKU=$HOME/IdeaProjects/teku/build/install/teku/bin/teku
 Run the `startTeku.sh` script to generate the value for shanghaiTimestamp (a time in the future) and start the teku instance for the network.
 
 ## Run Besu
-Run the `startBesu.sh` script to start the besu instance for the network.
+Shortly afterwards, run the `startBesu.sh` script to start the besu instance for the network.
 
 There is a `debugBesu.sh` to enable debug mode.
 
