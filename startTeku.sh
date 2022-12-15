@@ -20,7 +20,7 @@ $TEKU genesis mock --output-file "${GENESIS}" --network config.yaml --validator-
 
 export GENESIS_TIME=$(($(date +%s) + 120)) # 120s until genesis, feel free to increase this to give you more time to everything
 SHANGHAI=$(($GENESIS_TIME + 0))
-sed -i'' -e "s/\"shanghaiTimestamp\": .*,/\"shanghaiTimestamp\": $SHANGHAI,/" execution-genesis.json
+sed -i'' -e "s/\"shanghaiTime\": .*,/\"shanghaiTime\": $SHANGHAI,/" execution-genesis.json
 
 $TEKU \
   --ee-endpoint http://127.0.0.1:8551 \

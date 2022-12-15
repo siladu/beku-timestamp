@@ -4,7 +4,7 @@ Based on https://github.com/rolfyone/playground/tree/main/capella/beku (which is
 
 ## Setup
 
-Using besu branch from https://github.com/hyperledger/besu/pull/4758
+Using besu branch from https://github.com/hyperledger/besu/pull/4818
 
 Build besu and [teku (master branch)](https://github.com/ConsenSys/teku) respectively with `./gradlew installDist`
 
