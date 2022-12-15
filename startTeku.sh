@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-export LOG4J_CONFIGURATION_FILE=./log4j2-test.xml 
+#export LOG4J_CONFIGURATION_FILE=./log4j2-test.xml 
 
 SCRIPTDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
@@ -20,7 +20,7 @@ $TEKU genesis mock --output-file "${GENESIS}" --network config.yaml --validator-
 
 export GENESIS_TIME=$(($(date +%s) + 120)) # 120s until genesis, feel free to increase this to give you more time to everything
 SHANGHAI=$(($GENESIS_TIME + 0))
-sed -i'' -e "s/\"shanghaiTime\": .*,/\"shanghaiTime\": $SHANGHAI,/" execution-genesis.json
+# sed -i'' -e "s/\"shanghaiTime\": .*,/\"shanghaiTime\": $SHANGHAI,/" execution-genesis.json
 
 $TEKU \
   --ee-endpoint http://127.0.0.1:8551 \
@@ -30,11 +30,15 @@ $TEKU \
   --Xinterop-number-of-validators=256 \
   --Xinterop-owned-validator-start-index=0 \
   --Xinterop-owned-validator-count=256 \
+  --Xinterop-genesis-payload-header=genesis-header.json \
   --network=config.yaml \
   --p2p-private-key-file=teku.key \
   --rest-api-enabled \
   --rest-api-docs-enabled \
   --Xstartup-target-peer-count=0 \
   --Xstartup-timeout-seconds=0 \
-  --initial-state "${GENESIS}" \
   --data-path /tmp/teku
+
+
+
+#  --initial-state "${GENESIS}" \
