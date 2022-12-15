@@ -15,14 +15,13 @@ export BESU=$HOME/IdeaProjects/besu/build/install/besu/bin/besu
 export TEKU=$HOME/IdeaProjects/teku/build/install/teku/bin/teku
 ```
 
-
-## Run Teku
-Run the `startTeku.sh` script to generate the value for shanghaiTimestamp (a time in the future) and start the teku instance for the network.
-
 ## Run Besu
-Shortly afterwards, run the `startBesu.sh` script to start the besu instance for the network.
+Run the `startBesu.sh` script to start the besu instance for the network.
 
 There is a `debugBesu.sh` to enable debug mode.
+
+## Run Teku
+Run the `startTeku.sh` script.
 
 ## Cleanup
 Run `cleanup.sh` to clean artifacts of these scripts. besu and teku should not be running while this script is run.
@@ -30,8 +29,11 @@ Run `cleanup.sh` to clean artifacts of these scripts. besu and teku should not b
 
 ## Overview
 
- - Besu starts, produces 1 PoW block, where it hits TTD, and waits for CL.
- - CL Starts in bellatrix at genesis (0)
- - TTD detected as soon as it can request from besu (it may do some optimistic sync first)
- - Capella transition is epoch 1 (slot 4).
- - Currently, there's a misalignment where Capella transitions before Shanghai so we get Invalid payload attribute errors for a while as teku retries, however eventually it crosses the shanghaiTimestamp and starts working
+- Besu starts with all forks including shanghaiTime at 0.
+- CL Starts with all forks including Capella at 0.
+
+## IMPORTANT 
+
+- If you change any part of the genesis block, then you must run besu, get the modified genesis block hash and update genesis-header.json with it
+- genesis-header.json in teku interop mode let's teku know what the besu's genesis hash is so it doesn't try to request it as if the merge transition has happened.
+- If you change shanghaiTime to be non-zero, then this will also affect the genesis block hash since withdrawalsRoot will no longer be part of it, so need to update genesis-header.json with the new hash.
