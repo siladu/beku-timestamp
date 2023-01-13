@@ -1,42 +1,54 @@
-PRESET_BASE: minimal
+# Extends the mainnet preset
+PRESET_BASE: 'mainnet'
+CONFIG_NAME: 'withdrawal-test' # needs to exist because of Prysm. Otherwise it conflicts with mainnet genesis
 
 # Genesis
-GENESIS_FORK_VERSION: 0x20000089
+# ---------------------------------------------------------------
+# `2**14` (= 16,384)
+MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 80
+# Mar-01-2021 08:53:32 AM +UTC
+# This is an invalid valid and should be updated when you create the genesis
+MIN_GENESIS_TIME: 1669308660
+GENESIS_FORK_VERSION: 0x10000039
+GENESIS_DELAY: 0
+
+
+# Forking
+# ---------------------------------------------------------------
+# Some forks are disabled for now:
+#  - These may be re-assigned to another fork-version later
+#  - Temporarily set to max uint64 value: 2**64 - 1
 
 # Altair
-ALTAIR_FORK_EPOCH: 0
-ALTAIR_FORK_VERSION: 0x20000090
-
+ALTAIR_FORK_VERSION: 0x20000039
+ALTAIR_FORK_EPOCH: 1
 # Merge
-BELLATRIX_FORK_EPOCH: 0
-BELLATRIX_FORK_VERSION: 0x20000091
+BELLATRIX_FORK_VERSION: 0x30000039
+BELLATRIX_FORK_EPOCH: 2
 TERMINAL_TOTAL_DIFFICULTY: 0
+TERMINAL_BLOCK_HASH: 0x0000000000000000000000000000000000000000000000000000000000000000
+TERMINAL_BLOCK_HASH_ACTIVATION_EPOCH: 18446744073709551615
 
 # Capella
-CAPELLA_FORK_EPOCH: 0
-CAPELLA_FORK_VERSION: 0x20000092
-MAX_WITHDRAWALS_PER_PAYLOAD: 4
+CAPELLA_FORK_VERSION: 0x40000039
+CAPELLA_FORK_EPOCH: 4
 
-# Time parameters
-SECONDS_PER_SLOT: 6
-SLOTS_PER_EPOCH: 4
-
-# Deposit contract
-DEPOSIT_CONTRACT_ADDRESS: 0x4242424242424242424242424242424242424242
-
+# Sharding
+SHARDING_FORK_VERSION: 0x03001020
+SHARDING_FORK_EPOCH: 18446744073709551615
 
 # Time parameters
 # ---------------------------------------------------------------
-# [customized] Faster for testing purposes
-SECONDS_PER_SLOT: 6
+# 12 seconds
+SECONDS_PER_SLOT: 12
 # 14 (estimate from Eth1 mainnet)
 SECONDS_PER_ETH1_BLOCK: 14
-# 2**8 (= 256) epochs
-MIN_VALIDATOR_WITHDRAWABILITY_DELAY: 256
-# [customized] higher frequency of committee turnover and faster time to acceptable voluntary exit
-SHARD_COMMITTEE_PERIOD: 64
-# [customized] process deposits more quickly, but insecure
-ETH1_FOLLOW_DISTANCE: 16
+# 2**8 (= 256) epochs ~27 hours
+MIN_VALIDATOR_WITHDRAWABILITY_DELAY: 1
+# 2**8 (= 256) epochs ~27 hours
+SHARD_COMMITTEE_PERIOD: 1
+# 2**11 (= 2,048) Eth1 blocks ~8 hours
+ETH1_FOLLOW_DISTANCE: 12
 
 
 # Validator cycle
@@ -49,19 +61,12 @@ INACTIVITY_SCORE_RECOVERY_RATE: 16
 EJECTION_BALANCE: 16000000000
 # 2**2 (= 4)
 MIN_PER_EPOCH_CHURN_LIMIT: 4
-# [customized] scale queue churn at much lower validator counts for testing
-CHURN_LIMIT_QUOTIENT: 32
+# 2**16 (= 65,536)
+CHURN_LIMIT_QUOTIENT: 65536
 
-# Genesis
+
+# Deposit contract
 # ---------------------------------------------------------------
-# [customized]
-MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 64
-# Jan 3, 2020
-MIN_GENESIS_TIME: 1578009600
-# [customized] Faster to spin up testnets, but does not give validator reasonable warning time for genesis
-GENESIS_DELAY: 120
-
-
-# Ethereum Goerli testnet
-DEPOSIT_CHAIN_ID: 1
-DEPOSIT_NETWORK_ID: 1
+DEPOSIT_CHAIN_ID: 1337803
+DEPOSIT_NETWORK_ID: 1337803
+DEPOSIT_CONTRACT_ADDRESS: 0x4242424242424242424242424242424242424242
