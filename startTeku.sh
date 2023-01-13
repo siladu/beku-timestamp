@@ -33,7 +33,6 @@ $TEKU \
  --p2p-port=9000 \
  --p2p-advertised-port=9000 \
  --logging=info \
- --Xnetwork-total-terminal-difficulty-override=9 \
  --p2p-peer-upper-bound=100 \
  --ee-endpoint=http://127.0.0.1:8551 \
  --p2p-discovery-bootnodes=enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk,enr:-KG4QLZoy4fvyb6QXhRon3JOn_FHHA5kcMGmGfmsnjzfs_MPLN4PzZGw2uFtf7rRGKabgqxMr3FIPFtpYr-bQ3z4sMQDhGV0aDKQEQKFwEAAAEAUAAAAAAAAAIJpZIJ2NIJpcISl6FxaiXNlY3AyNTZrMaEC2EWXXpG8OmVRTsMLMJtd2E513uJLHh680G8QD7Lmfz-DdGNwgiMog3VkcIIjKA \
