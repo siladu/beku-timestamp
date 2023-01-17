@@ -1,8 +1,8 @@
-## devops@withdrawals-teku-besu-1
+#devnet-3
 data-path="/tmp/besu"
 genesis-file="besu.json"
 static-nodes-file="static-nodes.json"
-network-id=1337806
+network-id=1337807
 max-peers=100
 rpc-http-enabled=true
 rpc-http-api=["ADMIN","CLIQUE","MINER","ETH","NET","DEBUG","TXPOOL","ENGINE","TRACE"]
@@ -27,7 +27,7 @@ data-storage-format="BONSAI"
 engine-jwt-enabled=true
 engine-jwt-secret="jwtsecret.txt"
 miner-coinbase="0xf97e180c050e5Ab072211Ad2C213Eb5AEE4DF134" 
-#bootnodes=["enode://b896e651b9d100ece367bf6a360b22b7e3032f542c1bffcc102f94e79a44d74b227bbcf67218e25d375ddd50beaf229135d3e42a260717c3d82eb897ce8b9069@167.71.60.16:30303"]
+#bootnodes=["enode://4d60f32b1beaae3a89721a0f8525e672b9cbfce3b7a86f5c6f5a25113ace2041b4f01d7f79fd4d98f0ce3a49a3b1992872ed65fa41c9ad70ee2ea06f7c92659d@134.209.93.65:30303"]
 
 
 #--p2p-host=161.35.83.94 
