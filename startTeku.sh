@@ -28,7 +28,7 @@ $TEKU \
   --validators-proposer-default-fee-recipient=0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b \
   --metrics-enabled=true \
   --metrics-host-allowlist="*" \
-  --metrics-interface="0.0.0.0"
+  --metrics-interface="0.0.0.0" \
   --Xinterop-enabled=true \
   --Xinterop-number-of-validators=256 \
   --Xinterop-owned-validator-start-index=0 \
