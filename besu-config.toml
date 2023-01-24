@@ -1,8 +1,8 @@
-#devnet-3
+#devnet-4
 data-path="/tmp/besu"
 genesis-file="besu.json"
-static-nodes-file="static-nodes.json"
-network-id=1337807
+#static-nodes-file="static-nodes.json"
+network-id=1337808
 max-peers=100
 rpc-http-enabled=true
 rpc-http-api=["ADMIN","CLIQUE","MINER","ETH","NET","DEBUG","TXPOOL","ENGINE","TRACE"]
@@ -20,14 +20,9 @@ metrics-enabled=true
 metrics-host="0.0.0.0"
 metrics-port=8002
 p2p-enabled=true
-#p2p-host=142.93.108.142
-#p2p-host="125.63.11.148"
 sync-mode="FULL"
 data-storage-format="BONSAI"
 engine-jwt-enabled=true
 engine-jwt-secret="jwtsecret.txt"
 miner-coinbase="0xf97e180c050e5Ab072211Ad2C213Eb5AEE4DF134" 
-#bootnodes=["enode://4d60f32b1beaae3a89721a0f8525e672b9cbfce3b7a86f5c6f5a25113ace2041b4f01d7f79fd4d98f0ce3a49a3b1992872ed65fa41c9ad70ee2ea06f7c92659d@134.209.93.65:30303"]
-
-
-#--p2p-host=161.35.83.94 
+bootnodes=["enode://4e4a34339e66884d10f7e6c0683ba1975de32658d33728c54d610d23533fc4579366e0f7372c3328f4ef6f21321ed5da2c5afaa6443a6fe74b4b2d6c6a868fe8@164.90.201.20:30303"]

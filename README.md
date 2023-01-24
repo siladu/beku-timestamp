@@ -4,7 +4,7 @@ Based on https://github.com/rolfyone/playground/tree/main/capella/beku (which is
 
 ## Setup
 
-Using besu branch from https://github.com/hyperledger/besu/pull/4818
+Using besu [(main branch)](https://github.com/hyperledger/besu)
 
 Build besu and [teku (master branch)](https://github.com/ConsenSys/teku) respectively with `./gradlew installDist`
 
@@ -17,21 +17,12 @@ export TEKU=$HOME/IdeaProjects/teku/build/install/teku/bin/teku
 
 
 ## Run Teku
-Run the `startTeku.sh` script to generate the value for shanghaiTimestamp (a time in the future) and start the teku instance for the network.
+Run the `startTeku.sh` 
 
 ## Run Besu
-Shortly afterwards, run the `startBesu.sh` script to start the besu instance for the network.
+Run the `startBesu.sh`
 
 There is a `debugBesu.sh` to enable debug mode.
 
 ## Cleanup
 Run `cleanup.sh` to clean artifacts of these scripts. besu and teku should not be running while this script is run.
-
-
-## Overview
-
- - Besu starts, produces 1 PoW block, where it hits TTD, and waits for CL.
- - CL Starts in bellatrix at genesis (0)
- - TTD detected as soon as it can request from besu (it may do some optimistic sync first)
- - Capella transition is epoch 1 (slot 4).
- - Currently, there's a misalignment where Capella transitions before Shanghai so we get Invalid payload attribute errors for a while as teku retries, however eventually it crosses the shanghaiTimestamp and starts working
