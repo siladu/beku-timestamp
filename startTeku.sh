@@ -26,8 +26,8 @@ $TEKU \
  --logging=info \
  --p2p-peer-upper-bound=100 \
  --ee-endpoint=http://127.0.0.1:8551 \
- --p2p-discovery-bootnodes=enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk,enr:-Ly4QMiaDqIgFn1ANo9BHr9CWh0syOIzA3QFjU3uNjGPKv2NfX1oKked1GeThGNNqyHXzWUtrv1I7HqGeJAxrMW2M90Bh2F0dG5ldHOIAAAAAAAAAACEZXRoMpAQLtJwQAAAQBQAAAAAAAAAgmlkgnY0gmlwhKRayRSJc2VjcDI1NmsxoQJXlPj-cUCKC9pcs3qhYg0U5s37q8vNhh5nETjpttWoZ4hzeW5jbmV0cwCDdGNwgiMog3VkcIIjKA \
- --p2p-static-peers=/ip4/164.90.201.20/tcp/9000/p2p/16Uiu2HAm1KZCfJXgHWJV6U1GNpXN4N52GsydLnH4x5nC5LraBnqt \
+ --p2p-discovery-bootnodes=enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk,enr:-Ly4QPqATloC2-lrv-P26WQ6kmFQj3v1-Ss-N0Z12piMmdXiQsgPy3Wihr_pPJKpMK-dJifbzIR0LYzVTqhWqZjCByABh2F0dG5ldHOIAAAAAAAAAACEZXRoMpDN1qioQAAAQRQAAAAAAAAAgmlkgnY0gmlwhJK-FaaJc2VjcDI1NmsxoQP4H8gVZIpu_490Zdb1YX2R9wqYLkMztg0zHM8j3295CohzeW5jbmV0cwCDdGNwgiMog3VkcIIjKA \
+ --p2p-static-peers=/ip4/146.190.21.166/tcp/9000/p2p/16Uiu2HAmVMZZsBwYAborij8naZbHT9bRxgjM4KgTptCLUjrUV3YD \
  --metrics-enabled=true \
  --metrics-interface=0.0.0.0 \
  --metrics-port=8000 \
