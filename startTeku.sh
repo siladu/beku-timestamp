@@ -22,21 +22,22 @@ rm -rf /tmp/teku
 # SHANGHAI=$(($GENESIS_TIME + 0))
 # sed -i'' -e "s/\"shanghaiTime\": .*,/\"shanghaiTime\": $SHANGHAI,/" execution-genesis.json
 
+ #--p2p-static-peers=/ip4/134.209.93.65/tcp/9000/p2p/16Uiu2HAm1iBCZ9aUTgE9j19C44kWcMGQrYVkWTCEcrk3J4QsVHA5 \
 ## devnet-3
 $TEKU \
- --network=config.yaml \
- --initial-state=genesis.ssz \
+ --Xtrusted-setup=/Users/jflo/src/c-kzg-4844/src/trusted_setup.txt \
+ --network=4844-testnet/network-configs/devnet-4/config.yaml \
+ --initial-state=4844-testnet/network-configs/devnet-4/genesis.ssz \
  --Xee-version=kilnv2 \
  --data-path=/tmp/teku \
  --data-storage-mode=PRUNE \
  --p2p-enabled=true \
  --p2p-port=9000 \
  --p2p-advertised-port=9000 \
+ --p2p-discovery-bootnodes=enr:-Iq4QAw-ZQb0IiosZgDDcK5ehLs1XmwT0BWU1E1W3ZnhlAAwAE3I46dgCsCbeB5QUwcpDmpFfveTfKF7-tiIg0KWGjqGAYXoIfe6gmlkgnY0gmlwhKEjXcqJc2VjcDI1NmsxoQN4HpB2GMFY2MzwO9hGFjqRG47OX4hGDliAG-mJNWkEr4N1ZHCCIyk \
  --logging=info \
  --p2p-peer-upper-bound=100 \
  --ee-endpoint=http://127.0.0.1:8551 \
- --p2p-discovery-bootnodes=enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk,enr:-KG4QHTGktE5ysGDmYPubNtYUVOc8LvmcSiMlEYHWT8YHRCzOVBIAoryrxgo4GDkpbCMxD4K-aUIg4fY-TbbpkDgoTUDhGV0aDKQLfsAF0AAAEAUAAAAAAAAAIJpZIJ2NIJpcISG0V1BiXNlY3AyNTZrMaECXWB0JT687861SwDU3kM0JIZnc1VsHqjTQSLdl7lj4G6DdGNwgiMog3VkcIIjKA \
- --p2p-static-peers=/ip4/134.209.93.65/tcp/9000/p2p/16Uiu2HAm1iBCZ9aUTgE9j19C44kWcMGQrYVkWTCEcrk3J4QsVHA5 \
  --metrics-enabled=true \
  --metrics-interface=0.0.0.0 \
  --metrics-port=8000 \
