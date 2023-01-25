@@ -25,6 +25,7 @@ data-storage-format="BONSAI"
 engine-jwt-enabled=true
 engine-jwt-secret="jwtsecret.txt"
 miner-coinbase="0xf97e180c050e5Ab072211Ad2C213Eb5AEE4DF134" 
+bootnodes=["enode://8488a57c323d5e5bef1c40c5cb2330cb0bd75d900afad5e7f50a47ecc1ae7683fb664f509908c6b978633b9af75788e943f26e9b64989504d189ae7b3278ede3@161.35.91.184:30303"]
 #bootnodes=["enode://4d60f32b1beaae3a89721a0f8525e672b9cbfce3b7a86f5c6f5a25113ace2041b4f01d7f79fd4d98f0ce3a49a3b1992872ed65fa41c9ad70ee2ea06f7c92659d@134.209.93.65:30303"]
 
 

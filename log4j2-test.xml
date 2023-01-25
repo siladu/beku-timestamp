@@ -27,7 +27,7 @@
     <Loggers>
         <Logger name="io.netty" level="INFO"/>
         <Logger name="com.fasterxml.jackson.databind" level="DEBUG"/>
-	<Logger name="tech.pegasys.teku.ethereum.executionlayer.ExecutionLayerManagerImpl" level="TRACE">
+	<Logger name="tech.pegasys.teku.ethereum.executionlayer.ExecutionLayerManagerImpl" level="TRACE" additivity="false">
 		<AppenderRef ref="engineApiTraces"/>
 	</Logger>
         <Root level="INFO">
