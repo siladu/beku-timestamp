@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-#export LOG4J_CONFIGURATION_FILE=./log4j2-test.xml 
+export LOG4J_CONFIGURATION_FILE=./log4j2-test.xml 
 
 SCRIPTDIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
@@ -37,7 +37,7 @@ $TEKU \
  --p2p-discovery-bootnodes=enr:-Iq4QAw-ZQb0IiosZgDDcK5ehLs1XmwT0BWU1E1W3ZnhlAAwAE3I46dgCsCbeB5QUwcpDmpFfveTfKF7-tiIg0KWGjqGAYXoIfe6gmlkgnY0gmlwhKEjXcqJc2VjcDI1NmsxoQN4HpB2GMFY2MzwO9hGFjqRG47OX4hGDliAG-mJNWkEr4N1ZHCCIyk \
  --logging=info \
  --p2p-peer-upper-bound=100 \
- --ee-endpoint=http://127.0.0.1:8551 \
+ --ee-endpoint=http://127.0.0.1:8552 \
  --metrics-enabled=true \
  --metrics-interface=0.0.0.0 \
  --metrics-port=8000 \
