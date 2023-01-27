@@ -1,13 +1,14 @@
 # Capella Besu Teku test
 
-Clone with submodule: `git clone --recursive`
-or update submodule: `git submodule update --recursive --remote`
-
-Submodule is https://github.com/ethpandaops/withdrawals-testnet
-
 Based on https://github.com/rolfyone/playground/tree/main/capella/beku (which is based on https://github.com/ajsutton/merge-scripts/tree/main/beku)
 
 ## Setup
+
+Clone with submodule: `git clone --recursive git@github.com:siladu/beku-timestamp.git`
+Checkout this branch: `git checkout withdrawals-devnet-x`
+Update submodule: `git submodule update --recursive --remote`
+
+Submodule is https://github.com/ethpandaops/withdrawals-testnet
 
 Using besu [(main branch)](https://github.com/hyperledger/besu)
 
