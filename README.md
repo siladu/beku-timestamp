@@ -28,7 +28,7 @@ export TEKU=$HOME/IdeaProjects/teku/build/install/teku/bin/teku
 Run the `startTeku.sh 6` to run withdrawals-devnet-6 
 
 ## Run Besu
-Run the `startBesu.sh 6 to run withdrawals-devnet-6`
+Run the `startBesu.sh 6` to run withdrawals-devnet-6`
 
 There is a `debugBesu.sh` to enable debug mode.
 
