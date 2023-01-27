@@ -11,12 +11,15 @@ then
     exit 1
 fi
 
+DEVNET_NUM=${1:-6}
+export DEVNET_PATH=withdrawals-testnet/withdrawal-devnet-$DEVNET_NUM/
+export CONFIG_PATH=${DEVNET_PATH}custom_config_data/
+
 rm -rf /tmp/teku
 
-## devnet-4
 $TEKU \
- --network=config.yaml \
- --initial-state=genesis.ssz \
+ --network=${CONFIG_PATH}config.yaml \
+ --initial-state=${CONFIG_PATH}genesis.ssz \
  --Xee-version=kilnv2 \
  --data-path=/tmp/teku \
  --data-storage-mode=PRUNE \
@@ -26,8 +29,6 @@ $TEKU \
  --logging=info \
  --p2p-peer-upper-bound=100 \
  --ee-endpoint=http://127.0.0.1:8551 \
- --p2p-discovery-bootnodes=enr:-Iq4QMCTfIMXnow27baRUb35Q8iiFHSIDBJh6hQM5Axohhf4b6Kr_cOCu0htQ5WvVqKvFgY28893DHAg8gnBAXsAVqmGAX53x8JggmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk,enr:-Ly4QPqATloC2-lrv-P26WQ6kmFQj3v1-Ss-N0Z12piMmdXiQsgPy3Wihr_pPJKpMK-dJifbzIR0LYzVTqhWqZjCByABh2F0dG5ldHOIAAAAAAAAAACEZXRoMpDN1qioQAAAQRQAAAAAAAAAgmlkgnY0gmlwhJK-FaaJc2VjcDI1NmsxoQP4H8gVZIpu_490Zdb1YX2R9wqYLkMztg0zHM8j3295CohzeW5jbmV0cwCDdGNwgiMog3VkcIIjKA \
- --p2p-static-peers=/ip4/146.190.21.166/tcp/9000/p2p/16Uiu2HAmVMZZsBwYAborij8naZbHT9bRxgjM4KgTptCLUjrUV3YD \
  --metrics-enabled=true \
  --metrics-interface=0.0.0.0 \
  --metrics-port=8000 \
@@ -42,4 +43,6 @@ $TEKU \
  --ee-jwt-secret-file="jwtsecret.txt" \
  --Xlog-include-p2p-warnings-enabled \
  --Xmetrics-block-timing-tracking-enabled \
- --Xprogressive-balances-mode=USED
+ --Xprogressive-balances-mode=USED \
+ --p2p-discovery-bootnodes=`grep "enr:" ${DEVNET_PATH}/inventory/group_vars/all.yaml | tr -d " " | cut -c 2- | tr -d " " | tr -d "\"" | paste -sd , -`
+# --p2p-static-peers=`grep "ip4" ${DEVNET_PATH}/inventory/group_vars/all.yaml | tr -d "-" | tr -d " " | tr -d "\"" | paste -sd , -` 

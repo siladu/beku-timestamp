@@ -1,0 +1,4 @@
+[submodule "withdrawals-testnet"]
+	path = withdrawals-testnet
+	url = https://github.com/ethpandaops/withdrawals-testnet/
+        ignore=dirty
