@@ -5,7 +5,9 @@ Based on https://github.com/rolfyone/playground/tree/main/capella/beku (which is
 ## Setup
 
 Clone with submodule: `git clone --recursive git@github.com:siladu/beku-timestamp.git`
+
 Checkout this branch: `git checkout withdrawals-devnet-x`
+
 Update submodule: `git submodule update --recursive --remote`
 
 Submodule is https://github.com/ethpandaops/withdrawals-testnet
