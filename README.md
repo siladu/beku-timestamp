@@ -1,5 +1,10 @@
 # Capella Besu Teku test
 
+Clone with submodule: `git clone --recursive`
+or update submodule: `git submodule update --recursive --remote`
+
+Submodule is https://github.com/ethpandaops/withdrawals-testnet
+
 Based on https://github.com/rolfyone/playground/tree/main/capella/beku (which is based on https://github.com/ajsutton/merge-scripts/tree/main/beku)
 
 ## Setup
