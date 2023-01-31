@@ -8,6 +8,7 @@ Clone with submodule: `git clone --recursive git@github.com:siladu/beku-timestam
 
 Checkout this branch: `git checkout withdrawals-devnet-x`
 
+Update submodule (first time): `git submodule update --init --remote withdrawals-testnet`
 Update submodule: `git submodule update --recursive --remote`
 
 Submodule is https://github.com/ethpandaops/withdrawals-testnet
