@@ -10,11 +10,11 @@ fi
 #export LOG4J_CONFIGURATION_FILE=./log4j2-besu.xml 
 export BESU_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
 
-DEVNET_NUM=${1:-6}
-export DEVNET_PATH=withdrawals-testnet/withdrawal-devnet-$DEVNET_NUM/
+TESTNET_DIR=${1:-withdrawal-devnet-6}
+export DEVNET_PATH=withdrawals-testnet/$TESTNET_DIR/
 export CONFIG_PATH=${DEVNET_PATH}custom_config_data/
 
-rm -rf /tmp/besu
+#rm -rf /tmp/besu
 $BESU \
  --data-path="/tmp/besu" \
  --genesis-file="${CONFIG_PATH}besu.json" \
@@ -37,7 +37,7 @@ $BESU \
  --p2p-enabled=true \
  --sync-mode="FULL" \
  --data-storage-format="BONSAI" \
- --engine-jwt-disabled=false \
+ --engine-jwt-disabled=true \
  --engine-jwt-secret="jwtsecret.txt" \
  --miner-coinbase="0xf97e180c050e5Ab072211Ad2C213Eb5AEE4DF134" \
  --bootnodes=`grep "enode://" ${DEVNET_PATH}/inventory/group_vars/all.yaml | tr -d "-" | tr -d " " | tr -d "\"" | paste -sd , -`

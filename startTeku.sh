@@ -11,11 +11,11 @@ then
     exit 1
 fi
 
-DEVNET_NUM=${1:-6}
-export DEVNET_PATH=withdrawals-testnet/withdrawal-devnet-$DEVNET_NUM/
+TESTNET_DIR=${1:-withdrawal-devnet-6}
+export DEVNET_PATH=withdrawals-testnet/$TESTNET_DIR/
 export CONFIG_PATH=${DEVNET_PATH}custom_config_data/
 
-rm -rf /tmp/teku
+#rm -rf /tmp/teku
 
 $TEKU \
  --network=${CONFIG_PATH}config.yaml \
