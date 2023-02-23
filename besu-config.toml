@@ -15,5 +15,6 @@ p2p-enabled=false
 node-private-key-file="besu.key"
 engine-rpc-enabled=true
 engine-jwt-secret="jwtsecret.txt"
-engine-jwt-disabled=false
+engine-jwt-disabled=true
 tx-pool-limit-by-account-percentage="1"
+data-storage-format="BONSAI"

@@ -12,7 +12,7 @@ then
 fi
 
 GENESIS="${SCRIPTDIR}/beku-genesis.ssz"
-rm -rf /tmp/teku
+#rm -rf /tmp/teku
 rm -rf "${GENESIS}"
 
 

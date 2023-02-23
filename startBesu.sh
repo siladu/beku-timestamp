@@ -11,5 +11,5 @@ fi
 
 export BESU_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
 
-rm -rf /tmp/besu
+#rm -rf /tmp/besu
 $BESU --config-file besu-config.toml $@
