@@ -42,7 +42,7 @@ $TEKU \
  --data-storage-non-canonical-blocks-enabled=true \
  --ee-jwt-secret-file="jwtsecret.txt" \
  --Xlog-include-p2p-warnings-enabled \
- --Xmetrics-block-timing-tracking-enabled \
+ --metrics-block-timing-tracking-enabled \
  --Xprogressive-balances-mode=USED \
  --p2p-discovery-bootnodes=`grep "enr:" ${DEVNET_PATH}/inventory/group_vars/all.yaml | tr -d " " | cut -c 2- | tr -d " " | tr -d "\"" | paste -sd , -`
 # --p2p-static-peers=`grep "ip4" ${DEVNET_PATH}/inventory/group_vars/all.yaml | tr -d "-" | tr -d " " | tr -d "\"" | paste -sd , -` 
