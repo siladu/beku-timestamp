@@ -4,9 +4,7 @@ Based on https://github.com/rolfyone/playground/tree/main/capella/beku (which is
 
 ## Setup
 
-Using besu branch from https://github.com/hyperledger/besu/pull/4818
-
-Build besu and [teku (master branch)](https://github.com/ConsenSys/teku) respectively with `./gradlew installDist`
+Use whichever [besu](https://github.com/hyperledger/besu) and [teku](https://github.com/ConsenSys/teku) branch you want to test, build besu and teku respectively with `./gradlew installDist`
 
 Set 2 environment variables, to find besu and teku binaries. These are the locations of the applications that will be run in the start scripts.
 
