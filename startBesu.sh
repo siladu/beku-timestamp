@@ -10,9 +10,9 @@ fi
 #export LOG4J_CONFIGURATION_FILE=./log4j2-besu.xml 
 export BESU_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
 
-TESTNET_DIR=${1:-withdrawal-devnet-6}
-export DEVNET_PATH=withdrawals-testnet/$TESTNET_DIR/
-export CONFIG_PATH=${DEVNET_PATH}custom_config_data/
+TESTNET_DIR=${1:-devnet-8}
+export DEVNET_REPO=dencun-testnet
+export CONFIG_PATH=${DEVNET_REPO}/network-configs/${TESTNET_DIR}/
 
 #rm -rf /tmp/besu
 $BESU \
@@ -40,4 +40,5 @@ $BESU \
  --engine-jwt-disabled=true \
  --engine-jwt-secret="jwtsecret.txt" \
  --miner-coinbase="0xf97e180c050e5Ab072211Ad2C213Eb5AEE4DF134" \
- --bootnodes=`grep "enode://" ${DEVNET_PATH}/inventory/group_vars/all.yaml | tr -d "-" | tr -d " " | tr -d "\"" | paste -sd , -`
+ --bootnodes=enode://37380a62c67602611b423fd34f4f6a87239158a7fe78a5d3c1073f31a6fed36107f670b4b3c4725ba383e3079864d95d50356160ad317e1d4454fd6a7afd486d@142.93.131.179:30303?discport=30303
+# --bootnodes=`grep "enode://" ${DEVNET_PATH}/inventory/group_vars/all.yaml | tr -d "-" | tr -d " " | tr -d "\"" | paste -sd , -`

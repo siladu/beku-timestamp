@@ -1,18 +1,20 @@
-# Capella Besu Teku test
+# Dencun Besu Teku test
 
 Based on https://github.com/rolfyone/playground/tree/main/capella/beku (which is based on https://github.com/ajsutton/merge-scripts/tree/main/beku)
 
 ## Setup
 
-Clone with submodule: `git clone --recursive git@github.com:siladu/beku-timestamp.git`
+Either clone with submodule: `git clone --recursive git@github.com:siladu/beku-timestamp.git`
 
-Checkout this branch: `git checkout withdrawals-devnet-x`
+(or add the submodule yourself: `git submodule add https://github.com/ethpandaops/dencun-testnet`)
 
-Update submodule (first time): `git submodule update --init --remote withdrawals-testnet`
+Checkout this branch: `git checkout dencun-testnet-x`
+
+Update submodule (first time): `git submodule update --init --remote dencun-testnet`
 
 Update submodule: `git submodule update --recursive --remote`
 
-Submodule is https://github.com/ethpandaops/withdrawals-testnet
+Submodule is https://github.com/ethpandaops/dencun-testnet
 
 Using besu [(main branch)](https://github.com/hyperledger/besu)
 
@@ -27,18 +29,10 @@ export TEKU=$HOME/IdeaProjects/teku/build/install/teku/bin/teku
 
 
 ## Run Teku
-Run `./startTeku.sh withdrawals-devnet-4` to run withdrawals-devnet-4
-
-Run `./startTeku.sh withdrawals-devnet-6` to run withdrawals-devnet-6 
-
-Run `./startTeku.sh zhejiang-testnet` to run zhejiang-testnet
+Run `./startTeku.sh devnet-8`
 
 ## Run Besu
-Run `./startBesu.sh withdrawals-devnet-4` to run withdrawals-devnet-4
-
-Run `./startBesu.sh withdrawals-devnet-6` to run withdrawals-devnet-6 
-
-Run `./startBesu.sh zhejiang-testnet` to run zhejiang-testnet
+Run `./startBesu.sh devnet-8`
 
 There is a `debugBesu.sh` to enable debug mode.
 

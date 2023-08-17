@@ -8,7 +8,7 @@ curl --retry-delay 50 --retry-connrefused --location \
     "jsonrpc": "2.0",
     "method": "admin_changeLogLevel",
     "params": [
-        "DEBUG", ["org.hyperledger.besu.ethereum.api.jsonrpc"]
+        "DEBUG", ["org.hyperledger.besu.ethereum.api.jsonrpc", "org.hyperledger.besu.consensus.merge"]
     ],
     "id": 1
 }

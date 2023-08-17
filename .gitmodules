@@ -2,3 +2,6 @@
 	path = withdrawals-testnet
 	url = https://github.com/ethpandaops/withdrawals-testnet/
         ignore=dirty
+[submodule "dencun-testnet"]
+	path = dencun-testnet
+	url = https://github.com/ethpandaops/dencun-testnet
