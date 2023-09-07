@@ -33,7 +33,6 @@ $TEKU \
   --Xinterop-number-of-validators=256 \
   --Xinterop-owned-validator-start-index=0 \
   --Xinterop-owned-validator-count=256 \
-  --Xinterop-genesis-payload-header=genesis-header.json \
   --network=config.yaml \
   --p2p-private-key-file=teku.key \
   --rest-api-enabled \
